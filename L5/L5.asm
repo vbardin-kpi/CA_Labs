@@ -47,8 +47,8 @@ Start:
     mov ds, ax
     mov es, ax
 
-    MOV CX, [LEN]   ;Cx is counter for OUTERLOOP CX=5    
-    DEC CX          ; CX = 4 
+    mov cx, [LEN]   ;Cx is counter for OUTERLOOP CX=5    
+    dec cx          ; CX = 4 
     call sort
 
 ; set params for copy_array
