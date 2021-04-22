@@ -48,7 +48,7 @@ Start:
 
 ; set params for set_bdates
     mov cx, 16
-    mov bp, 0150h
+    mov bp, 0020h
     call set_bdates
 
 ; application finishing

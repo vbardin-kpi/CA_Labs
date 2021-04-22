@@ -58,7 +58,7 @@ CODESEG
 Start:	
     M_Init
 
-    mov ah, [matrix]                ; Запис масиву у старші біти регістру ah
+    mov ah, [matrix]                ; Запис масиву у старші байти регістру ah
 
     call    clear_screen            ; Виклик процедури, яка зафарбує екран у зелений колір
     call    draw_board              ; Виклик процедури, яка намалює екран 
@@ -77,7 +77,7 @@ Start:
     PROC clear_screen
         xor     di,di                ; Очищення di, перехід до адреси B800:0000
         mov     ax, ' ' + 2Fh*256    ; Заповнення екрана пробілами на зеленому фоні 
-        mov     cx,80*25             ; Кіл-сть символів, яку нам потрібно замалювати (cols * rows). DOSBox width 80 cols and height 25 rows 
+        mov     cx, 80*25            ; Кіл-сть символів, яку нам потрібно замалювати (cols * rows). DOSBox width 80 cols and height 25 rows 
         rep stosw                    ; Заповнення di <- ax, доки сx > 0 
         ret
     ENDP
